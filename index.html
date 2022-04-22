@@ -296,7 +296,7 @@
                 "key": "city",
                 "fields": ["lat", "long"]
               },
-              "as": ["s_lat", "s_long"]
+              "as": ["slat", "slong"]
             },
             {
               "lookup": "dcity",
@@ -305,29 +305,29 @@
                 "key": "city",
                 "fields": ["lat", "long"]
               },
-              "as": ["d_lat", "d_long"]
+              "as": ["dlat", "dlong"]
             }
           ],
 
           "projection": { "type": "albersUsa" },
           "mark": "rule",
           "encoding": {
-            "color": {"field": "player"},
             "strokeWidth": {"field": "points"},
+            "tooltip": {"field": "player"},
             "latitude": {
-              "field": "s_lat",
+              "field": "slat",
               "type": "quantitative"
             },
             "longitude": {
-              "field": "s_long",
+              "field": "slong",
               "type": "quantitative"
             },
             "latitude2": {
-              "field": "d_lat",
+              "field": "dlat",
               "type": "quantitative"
             },
             "longitude2": { 
-              "field": "d_long",
+              "field": "dlong",
               "type": "quantitative"
             }
         }
